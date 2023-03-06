@@ -1,0 +1,53 @@
+html {
+	// @media screen and (min-width: 1025px) {
+	// 	font-size: 0.833333vw;
+	// }
+}
+
+body {
+	font-weight: 400;
+	line-height: $lineHeight;
+	font-family: $fontFamily;
+
+	color: #000;
+
+	&.fixed {
+		overflow: hidden;
+		touch-action: none;
+		overscroll-behavior: none;
+	}
+}
+
+* {
+	-webkit-tap-highlight-color: #9c9c9c;
+}
+
+::selection {
+	background-color: #9c9c9c;
+	color: #fff;
+}
+
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	background-color: #fff;
+}
+
+.img-wrapper {
+	overflow: hidden;
+	display: block;
+
+	img {
+		display: block;
+		width: 100%;
+	}
+
+	video {
+		width: 100%;
+		display: block;
+	}
+}
