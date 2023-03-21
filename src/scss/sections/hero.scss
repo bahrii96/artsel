@@ -1,0 +1,147 @@
+.hero {
+   // .hero__overlay
+   padding-bottom: rem(75);
+   @include adaptiveValue('padding-bottom', 75, 15);
+
+   &__overlay {
+      width: 100%;
+      background-image: url('../img/hero.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      h1 {
+         font-family: 'Gilroy';
+         font-style: normal;
+         font-weight: 700;
+         font-size: rem(250);
+         line-height: 74.5%;
+         padding-top: rem(90);
+         padding-bottom: rem(145);
+         @include adaptiveValue('padding-top', 90, 45);
+         @include adaptiveValue('padding-bottom', 145, 70);
+
+         color: #ffffff;
+         @include adaptiveValue('font-size', 250, 110, 1680, 768, 1);
+         @media (max-width: $mobile) {
+            @include adaptiveValue('font-size', 110, 48, 768, 335, 1);
+         }
+
+         .hero-top {
+            margin-left: rem(-35);
+            @include adaptiveValue(' margin-left', -35, 10);
+         }
+         .hero-btm {
+            margin-left: rem(25);
+            @include adaptiveValue(' margin-left', 25, 10);
+         }
+         &__overlay {
+            width: 100%;
+            background-image: url('../img/hero.png');
+            object-fit: cover;
+            object-position: center;
+            background-repeat: no-repeat;
+         }
+      }
+   }
+
+   // .hero__box-services
+
+   &__box-services {
+      display: flex;
+      @media (max-width: $mobile) {
+         flex-direction: column;
+      }
+   }
+
+   // .hero__form
+
+   &__form {
+      width: 45%;
+      height: rem(350);
+
+      background: #14161b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 rem(80);
+      margin-top: rem(-80);
+      margin-left: rem(90);
+      @include adaptiveValue('margin-left', 90, 20, 1680, 992, 1);
+      @include adaptiveValue('padding', 80, 30, 1680, 992, 1);
+      @media (max-width: $mobile) {
+         width: 90%;
+         margin: rem(-50) auto 0 auto;
+         padding: rem(15);
+         height: auto;
+      }
+      p {
+         position: relative;
+         font-style: normal;
+         font-weight: 400;
+         font-size: rem(24);
+         line-height: 160%;
+         @include adaptiveValue('font-size', 24, 18);
+         /* or 38px */
+
+         color: #ffffff;
+         &::before {
+            position: absolute;
+            content: '';
+            display: block;
+            background-image: url('../img/hero-after.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            width: rem(125);
+            height: rem(125);
+            top: rem(-20);
+            right: rem(-30);
+            @include adaptiveValue('width', 125, 60);
+            @include adaptiveValue('height', 125, 60);
+            @include adaptiveValue('top', -20, 0);
+            @include adaptiveValue('right', -30, 0);
+         }
+      }
+      div {
+         width: 100%;
+         margin-top: rem(45);
+         @include adaptiveValue('margin-top', 45, 20);
+      }
+   }
+
+   // .hero__services
+
+   &__services {
+      display: flex;
+      flex: 1 1;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      li {
+         height: rem(135);
+         width: 33.333333%;
+         border-bottom: rem(1) solid #e9e9e9;
+         transition: all 0.3s;
+         &:hover {
+            background-color: #a1a0a05d;
+         }
+         a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+               max-width: 80%;
+            }
+         }
+      }
+   }
+}
+.button {
+   // .button__red
+
+   &__red {
+   }
+}

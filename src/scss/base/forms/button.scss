@@ -1,0 +1,38 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.button {
+   font-family: 'Gilroy';
+   font-style: normal;
+   font-weight: 500;
+   font-size: rem(14);
+   line-height: math.div(17, 14);
+   border-radius: rem(35);
+   text-align: center;
+   transition: all 0.3s;
+}
+.button__transparent {
+   border: rem(1) solid #14161b;
+   width: rem(220);
+   height: rem(42);
+   @include adaptiveValue('width', 220, 140);
+   &:hover {
+      background-color: #da1648;
+      color: #fff;
+      border: none;
+   }
+}
+.button__red {
+   background-color: #da1648;
+   color: #fff;
+   border: none;
+   width: rem(270);
+   height: rem(50);
+   @include adaptiveValue('width', 270, 160);
+
+   &:hover {
+      border: rem(1) solid #fff;
+      background-color: transparent;
+      color: #fff;
+   }
+}
