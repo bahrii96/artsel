@@ -307,6 +307,10 @@ h6 {
   }
 }
 
+a {
+  cursor: pointer;
+}
+
 .header__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1528,15 +1532,15 @@ h6 {
   top: -2.5rem;
 }
 
-@supports (top: clamp( 1.5625rem , 1.3466726619rem  +  1.0791366906vw , 2.5rem )) {
+@supports (top: clamp( -2.5rem , -1.3466726619rem  +  -1.0791366906vw , -1.5625rem )) {
   .case__header h2::before {
-    top: clamp( 1.5625rem , 1.3466726619rem  +  1.0791366906vw , 2.5rem );
+    top: clamp( -2.5rem , -1.3466726619rem  +  -1.0791366906vw , -1.5625rem );
   }
 }
 
-@supports not (top: clamp( 1.5625rem , 1.3466726619rem  +  1.0791366906vw , 2.5rem )) {
+@supports not (top: clamp( -2.5rem , -1.3466726619rem  +  -1.0791366906vw , -1.5625rem )) {
   .case__header h2::before {
-    top: calc(1.5625rem + 0.9375 * (100vw - 20rem) / 86.875);
+    top: calc(-1.5625rem + -0.9375 * (100vw - 20rem) / 86.875);
   }
 }
 
