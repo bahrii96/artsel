@@ -260,7 +260,7 @@ h6 {
 .testimonials-button-prev::after {
   content: "";
   position: absolute;
-  background-image: url(./img/union.svg);
+  background-image: url("./../img/union.svg");
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -268,6 +268,7 @@ h6 {
   height: 4rem;
   background-color: #fff;
   border-radius: 50%;
+  color: transparent;
 }
 
 @supports (width: clamp( 2.875rem , 2.6160071942rem  +  1.2949640288vw , 4rem )) {
@@ -763,9 +764,11 @@ h6 {
   }
 }
 
+.no-webp .hero__overlay{
+  background-image: url("../img/hero.png"); }
+
 .hero__overlay {
   width: 100%;
-  background-image: url("../img/hero.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -849,9 +852,11 @@ h6 {
   }
 }
 
+.no-webp .hero__overlay h1__overlay{
+  background-image: url("../img/hero.png"); }
+
 .hero__overlay h1__overlay {
   width: 100%;
-  background-image: url("../img/hero.png");
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -2383,10 +2388,6 @@ h6 {
     background-color: #fff;
   }
 
-  .case__swiper-vertical {
-    display: none;
-  }
-
   .case__swiper-horizontal {
     width: 80%;
   }
@@ -2410,6 +2411,10 @@ h6 {
             transform: rotate(270deg);
     left: 96%;
     top: 50%;
+  }
+
+  .case__swiper-vertical {
+    display: none !important;
   }
 
   .testimonials .our_partner img {
@@ -2440,3 +2445,7 @@ h6 {
     display: none;
   }
 }
+
+.webp .hero__overlay{ background-image: url(../img/hero.webp); }
+
+.webp .hero__overlay h1__overlay{ background-image: url(../img/hero.webp); }

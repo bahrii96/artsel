@@ -84,9 +84,6 @@
          margin: 0 auto;
          opacity: 0.4;
       }
-      @media (max-width: $mobile) {
-         display: none;
-      }
    }
 
    // .case__vertical-title
@@ -264,5 +261,10 @@
       background-color: #dddddd;
       top: 50%;
       right: -110%;
+   }
+}
+@media (max-width: $mobile) {
+   .case__swiper-vertical {
+      display: none !important;
    }
 }
