@@ -1528,6 +1528,18 @@ h6 {
   top: -2.5rem;
 }
 
+@supports (top: clamp( 1.5625rem , 1.3466726619rem  +  1.0791366906vw , 2.5rem )) {
+  .case__header h2::before {
+    top: clamp( 1.5625rem , 1.3466726619rem  +  1.0791366906vw , 2.5rem );
+  }
+}
+
+@supports not (top: clamp( 1.5625rem , 1.3466726619rem  +  1.0791366906vw , 2.5rem )) {
+  .case__header h2::before {
+    top: calc(1.5625rem + 0.9375 * (100vw - 20rem) / 86.875);
+  }
+}
+
 .case__header p {
   font-weight: 400;
   font-size: 1.5rem;

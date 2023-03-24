@@ -37,6 +37,7 @@
             line-height: 100%;
             color: #da1648;
             top: rem(-40);
+            @include adaptiveValue('top', 40, 25);
          }
       }
       p {
