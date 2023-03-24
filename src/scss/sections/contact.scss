@@ -1,0 +1,123 @@
+.contact {
+   // .contact__container
+   background: #14161b;
+   padding-top: rem(125);
+   padding-bottom: rem(180);
+   border-bottom: rem(1) solid #232323;
+   display: flex;
+   gap: rem(288);
+   @include adaptiveValue('padding-bottom', 180, 50);
+   @include adaptiveValue('padding-top', 125, 90);
+   @include adaptiveValue('gap', 288, 30, 767);
+   @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: rem(20);
+   }
+   &__container {
+   }
+
+   // .contact__left
+
+   &__left {
+      max-width: rem(396);
+      width: 100%;
+      h2 {
+         position: relative;
+         color: #ffffff;
+         &::before {
+            content: '05';
+            position: absolute;
+            font-weight: 700;
+            font-size: rem(16);
+            line-height: 100%;
+            color: #da1648;
+            top: rem(-40);
+         }
+      }
+   }
+
+   // .contact__info
+
+   &__info {
+      margin-top: rem(240);
+      @include adaptiveValue('margin-top', 255, 20);
+      a {
+         font-weight: 500;
+         font-size: rem(24);
+         line-height: 170%;
+         color: #ffffff;
+         @include adaptiveValue('font-size', 24, 14);
+      }
+      li {
+         margin-bottom: rem(40);
+         @include adaptiveValue('margin-bottom', 40, 10);
+      }
+   }
+
+   // .contact__social-link
+
+   &__social-link {
+      display: flex;
+      gap: rem(30);
+      a {
+         font-weight: 400;
+         font-size: rem(20);
+         line-height: 170%;
+         color: #9b9b9b;
+         @include adaptiveValue('font-size', 20, 14);
+      }
+   }
+
+   // .contact__right
+
+   &__right {
+      h3 {
+         font-weight: 700;
+         font-size: rem(44);
+         line-height: 170%;
+         color: #ffffff;
+         margin-bottom: rem(50);
+         margin-top: rem(15);
+         @include adaptiveValue('font-size', 44, 24);
+         @include adaptiveValue(' margin-bottom', 50, 20);
+      }
+      p {
+         font-weight: 400;
+         font-size: rem(24);
+         line-height: 170%;
+         color: #a8a8a8;
+         @include adaptiveValue('font-size', 24, 16);
+      }
+   }
+   &__form {
+      display: flex;
+      flex-direction: column;
+      margin-top: rem(75);
+   }
+   &__input {
+      &:hover {
+         border-bottom: rem(1) solid #da1648;
+      }
+      &:focus {
+         outline: none;
+         border-bottom: rem(1) solid #da1648;
+      }
+      font-size: 24px;
+      background: #14161b;
+      border-bottom: rem(1) solid #ffffff;
+      margin-bottom: rem(50);
+      color: #ffffff;
+      @include adaptiveValue('font-size', 24, 16);
+   }
+   textarea {
+      resize: vertical;
+   }
+}
+.title-section {
+}
+.button {
+   // .button__red
+
+   &__red {
+   }
+}

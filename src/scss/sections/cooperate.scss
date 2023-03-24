@@ -54,24 +54,6 @@
       @include adaptiveValue('margin-top', 165, 50);
    }
 
-   // .cooperate__spollers-item
-
-   &__spollers-item:first-child {
-      //       &._spoller-active {
-      // 			// &::before {
-      // 			// 	transform: translateX(-75%) rotate(-40deg);
-      // 			// }
-      // 			// &::after {
-      // 			// 	transform: rotate(40deg);
-      // 			// }
-      // 			 &__spollers-title {
-      // &:after {
-      // 	display: none;
-      // }
-
-      // 			 }
-   }
-
    // .cooperate__spollers-title
 
    &__spollers-title {

@@ -7,3 +7,25 @@
    color: #14161b;
    @include adaptiveValue('font-size', 96, 24);
 }
+.swiper-button-next,
+.swiper-button-prev,
+.testimonials-button-next,
+.testimonials-button-prev {
+   &::after {
+      content: '';
+      position: absolute;
+      background-image: url(./img/union.svg);
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: rem(64);
+      height: rem(64);
+      background-color: #fff;
+      border-radius: 50%;
+      @include adaptiveValue('width', 64, 46);
+      @include adaptiveValue('height', 64, 46);
+      @media (max-width: $mobile) {
+         background-color: #f7f7f7;
+      }
+   }
+}

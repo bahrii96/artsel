@@ -1,3 +1,44 @@
 //====================================================================================================
+.footer {
+   // .footer__container
+   background-color: #14161b;
+   padding: rem(50) 0;
+
+   &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media (max-width: $tablet) {
+         flex-direction: column-reverse;
+         gap: rem(20);
+      }
+   }
+   ul {
+      display: flex;
+      gap: rem(122);
+      @include adaptiveValue('gap', 122, 15);
+      @media (max-width: $mobile) {
+         flex-direction: column;
+         li {
+            text-align: center;
+         }
+      }
+   }
+   // .footer__coopirite
+   a {
+      font-weight: 600;
+      font-size: rem(15);
+      line-height: 150%;
+      color: #ffffff;
+   }
+   &__coopirite {
+      font-weight: 400;
+      font-size: rem(15);
+      line-height: 170%;
+      /* or 26px */
+
+      color: #ffffff;
+   }
+}
 
 //====================================================================================================

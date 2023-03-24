@@ -30,18 +30,67 @@ function initSliders() {
    if (document.querySelector('.swiper')) {
       // Указываем скласс нужного слайдера
       // Создаем слайдер
+      var swiper = new Swiper('.testimonials__swiper', {
+         loop: false,
+         slidesPerView: 1,
+         spaceBetween: 30,
+         pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+         },
+         thumbs: {
+            swiper: swiper,
+         },
+         breakpoints: {
+            776: {
+               slidesPerView: 2.5,
+            },
+         },
+         navigation: {
+            nextEl: '.testimonials-button-next',
+            prevEl: '.testimonials-button-prev',
+         },
+      });
 
+      var swiper = new Swiper('.our_partner', {
+         loop: false,
+
+         slidesPerView: 2,
+         autoHeight: false,
+         slidesPerGroup: 1,
+         breakpoints: {
+            776: {
+               slidesPerView: 3,
+            },
+            991: {
+               slidesPerView: 4,
+            },
+         },
+
+         autoplay: {
+            // Пауза между прокруткой
+            delay: 1000,
+            // Закончить на последнем слайде
+            stopOnLastSlide: false,
+            // Отключить после ручного переключения
+            disableOnInteraction: false,
+         },
+         speed: 800,
+      });
       var swiper = new Swiper('.case__swiper-vertical', {
          direction: 'vertical',
-         //  loop: true,
-         //  spaceBetween: 10,
+         loop: true,
+         spaceBetween: 20,
          slidesPerView: 4,
+         autoHeight: true,
+         slidesPerGroup: 1,
          //  freeMode: true,
          //  watchSlidesProgress: true,
       });
       var swiper = new Swiper('.case__swiper-horizontal', {
          loop: true,
          spaceBetween: 10,
+
          navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -49,80 +98,6 @@ function initSliders() {
          thumbs: {
             swiper: swiper,
          },
-      });
-      new Swiper('.swip', {
-         // Указываем скласс нужного слайдера
-         // Подключаем модули слайдера
-         // для конкретного случая
-         modules: [Navigation],
-         observer: true,
-         observeParents: true,
-         slidesPerView: 1,
-         spaceBetween: 0,
-         autoHeight: true,
-         speed: 800,
-
-         //touchRatio: 0,
-         //simulateTouch: false,
-         //loop: true,
-         //preloadImages: false,
-         //lazy: true,
-
-         /*
-			// Эффекты
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
-
-         // Пагинация
-         /*
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-			*/
-
-         // Скроллбар
-         /*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				draggable: true,
-			},
-			*/
-
-         // Кнопки "влево/вправо"
-         navigation: {
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next',
-         },
-
-         // Брейкпоинты
-         /*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
-         // События
-         on: {},
       });
    }
 }
@@ -138,6 +113,7 @@ function initSlidersScroll() {
             observeParents: true,
             direction: 'vertical',
             slidesPerView: 'auto',
+
             freeMode: {
                enabled: true,
             },

@@ -1,0 +1,100 @@
+.testimonials {
+   // .testimonials__container
+
+   &__container {
+      overflow: hidden;
+   }
+   h2 {
+      position: relative;
+      font-weight: 700;
+      font-size: rem(36);
+      line-height: 100%;
+
+      color: #14161b;
+      padding-left: rem(47);
+      margin-top: rem(280);
+      margin-bottom: rem(186);
+      @include adaptiveValue('margin-top', 280, 50);
+      @include adaptiveValue('margin-bottom', 186, 50);
+      @include adaptiveValue('font-size', 36, 24);
+      &::before {
+         content: '03';
+         position: absolute;
+         font-weight: 700;
+         font-size: rem(16);
+         line-height: 100%;
+         color: #da1648;
+         top: 50%;
+         left: 0;
+         transform: translateY(-50%);
+      }
+   }
+   &__swiper {
+      position: relative;
+      padding-bottom: rem(128);
+      @include adaptiveValue('padding-bottom', 128, 50);
+      img {
+         margin-bottom: rem(35);
+         @include adaptiveValue('margin-bottom', 38, 15);
+      }
+      p {
+         font-weight: 500;
+         font-size: rem(24);
+         line-height: 170%;
+         letter-spacing: -0.1px;
+
+         color: #14161b;
+         @include adaptiveValue('font-size', 24, 18);
+      }
+      .testimonials-name,
+      .testimonials-dev,
+      .testimonials-data {
+         font-weight: 400;
+         font-size: rem(16);
+         line-height: 170%;
+         letter-spacing: -0.1px;
+         color: #808080;
+         @include adaptiveValue('font-size', 16, 12);
+      }
+      .swiper-slide-next ~ .swiper-slide {
+         opacity: 0.5;
+      }
+   }
+   &__swiper-nav {
+      position: relative;
+      display: flex;
+      height: rem(50);
+      margin-top: rem(102);
+
+      .swiper-pagination-bullet {
+         border: 1px solid #14161b;
+         background-color: transparent;
+         opacity: 1;
+      }
+      .swiper-pagination-bullet-active {
+         background: #da1648;
+         border: 1px solid transparent;
+      }
+   }
+   .our_partner {
+      margin-top: rem(150);
+      margin-bottom: rem(280);
+      padding-top: rem(80);
+      padding-bottom: rem(80);
+      border-top: rem(1) solid #e9e9e9;
+      border-bottom: rem(1) solid #e9e9e9;
+      overflow: hidden;
+      @include adaptiveValue('padding-top', 80, 40);
+      @include adaptiveValue('padding-bottom', 80, 40);
+      @include adaptiveValue('margin-top', 150, 50);
+      @include adaptiveValue('margin-bottom', 280, 50);
+      img {
+         @media (max-width: $mobile) {
+            width: 50%;
+         }
+      }
+   }
+   .testimonials-button-next {
+      transform: translateX(70px);
+   }
+}

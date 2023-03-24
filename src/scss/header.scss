@@ -7,6 +7,7 @@
       align-items: center;
       justify-content: space-between;
       height: rem(133);
+      overflow: hidden;
    }
 
    // .header__box-right
@@ -22,18 +23,164 @@
          font-size: rem(15);
          line-height: 120%;
          letter-spacing: rem(0.5);
+         @media (max-width: $mobile) {
+            display: none;
+         }
       }
    }
-
+   .menu__list {
+      @media (max-width: rem(1250)) {
+         display: none;
+      }
+   }
    // .header__logo
 
    &__logo {
       margin-top: rem(-12);
+      img {
+         @media (max-width: $mobile) {
+            width: 77%;
+         }
+      }
+   }
+   // .header__mobile-menu-container
+
+   &__mobile-menu-container {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background: #14161b;
+      top: 0;
+      z-index: 15;
+      padding: 0 rem(15);
+      right: -150%;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
    }
 
-   // .header__menu
+   // .header__mobile-menu-box
 
-   &__menu {
+   &__mobile-menu-box {
+      display: flex;
+      align-items: center;
+      height: rem(133);
+   }
+
+   // .header__mobile-menu-logo
+
+   // .header__mobile-menu-body
+
+   &__mobile-menu-body {
+      display: flex;
+      gap: rem(330);
+
+      margin: auto 0;
+      @include adaptiveValue('gap', 330, 40, 1860, 991);
+      @media (max-width: $mobile) {
+         flex-direction: column-reverse;
+      }
+   }
+
+   // .header__mobile-info
+
+   &__mobile-info {
+      margin-right: rem(10);
+      a {
+         font-weight: 500;
+         font-size: rem(24);
+         line-height: 170%;
+         color: #ffffff;
+         @include adaptiveValue('font-size', 24, 14);
+      }
+      li {
+         margin-bottom: rem(92);
+         @include adaptiveValue('margin-bottom', 92, 10);
+      }
+   }
+
+   // .header__mobile-info-link
+
+   &__mobile-info-link {
+      display: flex;
+      gap: rem(30);
+      a {
+         font-weight: 400;
+         font-size: rem(20);
+         line-height: 170%;
+         color: #9b9b9b;
+         @include adaptiveValue('font-size', 20, 14);
+      }
+   }
+
+   // .header__mobile-menu-list
+
+   &__mobile-menu-list {
+      position: relative;
+   }
+
+   // .header__mobile-menu-item
+
+   &__mobile-menu-item {
+      font-weight: 600;
+      font-size: rem(56);
+      line-height: 100%;
+      color: #ffffff;
+      margin-bottom: rem(60);
+      transition: all 0.3s ease;
+      @include adaptiveValue('font-size', 56, 22);
+      @include adaptiveValue('margin-bottom', 60, 15);
+      &:hover,
+      &:focus {
+         color: #da1648;
+      }
+   }
+
+   // .header__mobile-menu-sublist
+
+   &__mobile-menu-sublist {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      max-width: 330px;
+      width: 100%;
+      padding-left: rem(122);
+
+      @include adaptiveValue('padding-left', 122, 10, 1860, 766);
+
+      @media (max-width: $mobile) {
+         position: relative;
+         left: 0;
+         top: 0;
+         width: 100%;
+         margin-top: rem(10);
+      }
+      display: none;
+   }
+
+   // .header__mobile-menu-subitem
+
+   &__mobile-menu-subitem {
+      &:hover {
+         color: #da1648;
+      }
+      font-weight: 400;
+      font-size: rem(24);
+      line-height: 100%;
+      color: #a6a6a6;
+      margin-bottom: rem(40);
+      @include adaptiveValue('font-size', 24, 16);
+      @include adaptiveValue('margin-bottom', 40, 15);
+   }
+
+   // .header__mobile-menu-sublink
+
+   &__mobile-menu-sublink {
+   }
+
+   // .header__mobile-menu-link
+
+   &__mobile-menu-link {
    }
 }
 .menu {
@@ -87,16 +234,30 @@
 }
 
 //====================================================================================================
-
+.header__mobile-menu-item.services {
+   &:hover {
+      .header__mobile-menu-sublist {
+         display: block;
+      }
+   }
+}
 //Burger
-
+.menu-open .header__mobile-menu-container {
+   right: 0;
+}
+.menu-open .icon-menu {
+   &::before,
+   &::after {
+      background-color: #fff;
+   }
+}
 .icon-menu {
    display: block;
    position: relative;
    width: rem(30);
    height: rem(18);
    cursor: pointer;
-   z-index: 5;
+   z-index: 100;
    span,
    &::before,
    &::after {
